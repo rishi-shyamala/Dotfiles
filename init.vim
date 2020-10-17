@@ -2,20 +2,15 @@ call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'chrisbra/csv.vim'
-" Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-" Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
-" Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 Plug 'Shougo/neco-syntax'
 Plug 'zchee/deoplete-jedi'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'w0rp-ale'
-Plug 'artur-shaik/vim-javacomplete2'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar'
@@ -54,29 +49,6 @@ function! s:check_back_space() abort "" {{{
     return !col || getline('.')[col - 1]  =~ '\s'
 endfunction "" }}}
 
-" Java completion
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-autocmd FileType java JCEnable
-" Shorten error/warning flags
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-" I have some custom icons for errors and warnings but feel free to change them.
-let g:ale_sign_error = '✘✘'
-let g:ale_sign_warning = '⚠⚠'
-
-" Disable or enable loclist at the bottom of vim 
-" Comes down to personal preferance.
-let g:ale_open_list = 0
-let g:ale_loclist = 0
-
-
-" Setup compilers for languages
-
-let g:ale_linters = {
-      \  'cs':['syntax', 'semantic', 'issues'],
-      \  'python': ['pylint'],
-      \  'java': ['javac']
-      \ }
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
